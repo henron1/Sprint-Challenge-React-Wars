@@ -1,14 +1,59 @@
 import React, { Component } from 'react';
 import './App.css';
+import CharacterList from './components/CharacterList.js'
+
+const dataList = [
+  {
+    name:'something',
+    homeworld:''
+  },
+  {
+    name:'luke',
+    homeworld:''
+  },
+  {
+    name:'han',
+    homeworld:''
+  },
+  {
+    name:'whatever',
+    homeworld:''
+  },
+]
+  
+  
+
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      starwarsChars: []
+      starwarsChars: [],
+      name:'',
+      homeworld:'',
     };
   }
 
+// handleChanges = event => {
+//   this.setState({ [event.target.name]: event.target.value })
+// };
+
+addNewCharacter = event => {
+  event.preventDefault();
+  this.setState({
+    starwarsChars: [
+      ...this.state.starwarsChars,
+      { name:this.state.name,  homeworld: this.state.homeworld } 
+    ], 
+    name: ''
+  });
+};
+
+
+
+
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   componentDidMount() {
     this.getCharacters('https://swapi.co/api/people');
   }
@@ -28,11 +73,20 @@ class App extends Component {
         throw new Error(err);
       });
   };
+  // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+
 
   render() {
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
+        <CharacterList 
+          addNewCharacter={this.addNewCharacter}
+        />
       </div>
     );
   }
