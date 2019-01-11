@@ -1,12 +1,17 @@
 import React from 'react';
-import "./StarWars.css";
+import Character from './Character.js'
 
-function Character(props) {
+function CharacterList (props){
     return(
-        <div className='characterMain'>
-        {props.character.name}
+        <div>
+            <div className='header'>
+                 <h1>Here are some Star Wars Characters</h1>
+            </div>
+            {props.character}
+             
         </div>
-    )
+        
+    );
 }
 
-export default Character;
+export default CharacterList;

@@ -1,26 +1,26 @@
 import React from 'react';
-import Character from './Character.js'
+import "./StarWars.css";
 
-function CharacterList (props){
+const Character = (props) => {
     return(
-        <div>
-            <div className='header'>
-                 <h1>Here are some Star Wars Characters</h1>
-            </div>
-
-             {props.starwarsDataList.map(character => {
+        <div className='characterMain'>
+        {props.starwarsChars.map( character => {
+            // console.log(props);
                 return(
-                    <Character 
-                    character={character}
-                    addNewCharacter={props.addNewCharacter}
-                    // key={character.id}
+                    <div classname="file">
+                        <div className="name"><p className="jedi-name">My name is: </p> {character.name}</div>
+                        <div className="eye-color"><p className="eyes">My eye-color is: </p> {character.eye_color}</div>
+                        <div className="birth-year"><p clasName="birthday">I was born in </p> {character.birth_year}</div>
+                    </div> 
+                   
+                    
+                     
                 
-                    />
+                    
                 );
-            })} }
+            })}
         </div>
-        
-    );
+    )
 }
 
-export default CharacterList;
+export default Character;

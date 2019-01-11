@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import CharacterList from './components/CharacterList.js'
+import Character from './components/CharacterList'
 
 const dataList = [
   {
@@ -29,8 +30,7 @@ class App extends Component {
     super();
     this.state = {
       starwarsChars: [],
-      name:'',
-      homeworld:'',
+      
     };
   }
 
@@ -38,16 +38,16 @@ class App extends Component {
 //   this.setState({ [event.target.name]: event.target.value })
 // };
 
-addNewCharacter = event => {
-  event.preventDefault();
-  this.setState({
-    starwarsChars: [
-      ...this.state.starwarsChars,
-      { name:this.state.name,  homeworld: this.state.homeworld } 
-    ], 
-    name: ''
-  });
-};
+// addNewCharacter = event => {
+//   event.preventDefault();
+//   this.setState({
+//     starwarsChars: [
+//       ...this.state.starwarsChars,
+//       { name:this.state.starwarsChars.name,  homeworld: this.state.starwarsChars.homeworld } 
+//     ], 
+//     name: ''
+//   });
+// };
 
 
 
@@ -84,9 +84,12 @@ addNewCharacter = event => {
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
-        <CharacterList 
-          addNewCharacter={this.addNewCharacter}
-        />
+         <CharacterList 
+        starwarsChars={this.state.starwarsChars}
+        /> 
+        {/* <Character 
+        
+        /> */}
       </div>
     );
   }
