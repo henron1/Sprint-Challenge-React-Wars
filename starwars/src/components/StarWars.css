@@ -1,0 +1,30 @@
+.characterMain{
+    background:hotpink;
+    opacity: .5;
+    width: 300px;
+    justify-content: center;
+    margin-left:440px;
+    border: 2px solid lightgoldenrodyellow;
+    /* border:2px solid lightgrey; */
+}
+
+.name .jedi-name {
+    font-weight:bold;
+}
+
+.eye-color {
+    text-decoration: underline;
+}
+ .eye-color .eyes { 
+     text-decoration: none;
+ }
+
+
+ .birth-year .birth{
+     line-height: 12px;
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+ }
+ 
+ .file {
+     border: 1px solid rgb(0, 0, 0);
+ }
